@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Hoc JS</title>
+    <script>
+        var txt1='Day la mot bien js';
+        txt1=586;
+        //alert('Noi dung: '+txt1+' '+txt2);
+        /*
+        console.log(txt1);
+        alert('jkghjhjk');
+        */
+        
+        var tuoi=16;
+        if(tuoi<20){
+            //alert('Ban nho hon 20 tuoi');
+        }else if(tuoi==20){
+            //alert('Ban bang 20 tuoi');
+        }else{
+            //alert('Ban lon hon 20 tuoi');
+        }
+        /*
+        <,>,<=,>=,==,!=
+        */
+        
+        var arr1=['p1','p2',123,'hsdhs'];
+        //arr1[0];
+        
+        var tinhthanh=['Tinh A','Tinh B','Tinh C','Tinh D','Tinh E','Tinh F'];
+        var selectbox='<select>';
+
+        for(i=0;i<tinhthanh.length;i++){
+            selectbox+=('<option>'+tinhthanh[i]+'</option>');
+        }
+
+        //selectbox=selectbox+'</select>';
+        selectbox+='</select>';
+    </script>
+</head>
+<body>
+    <h1>Hoc js</h1>
+    <script>
+        document.write('<h2>'+arr1[2]+'<h2>');
+        
+        var i=0;
+        for(i;i<arr1.length;i++){
+            document.write(arr1[i]+'<br>');
+        }
+        
+        //Tao danh sach tinh thanh
+        /*
+        document.write('<select>');
+        for(i=0;i<tinhthanh.length;i++){
+            //document.write(tinhthanh[i]+'<br>');
+            document.write('<option>'+tinhthanh[i]+'</option>');
+        }
+        document.write('</select>');
+        */        
+
+        document.write(selectbox);
+    </script>
+    
+    <select>
+        <option>Tinh A</option>
+        <option>Tinh B</option>
+        <option>Tinh C</option>
+        <option>Tinh D</option>
+    </select>
+    <script>
+        document.write(selectbox);
+    </script>
+</body>
+</html>

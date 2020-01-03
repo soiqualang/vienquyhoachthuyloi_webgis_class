@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Hoc JS - Form</title>
+</head>
+<body>
+    <h1>Hoc JS - Form</h1>
+    <form>
+        Chieu dai: <input type="number" name="chieudai" id="chieudai" placeholder="Nhap chieu dai"><br>
+        Chieu rong: <input type="number" name="chieurong" id="chieurong" placeholder="Nhap chieu rong"><br>
+        <input type="button" value="Tinh dien tich" onclick="dientich_calc();">
+        <hr>
+        <div id="kq_dientich"></div>
+    </form>
+    <script>
+        function getE(maso){
+            return document.getElementById(maso);
+        }
+
+        function dientich_calc(){
+            var chieudai=getE('chieudai').value*1;
+            var chieurong=getE('chieurong').value*1;
+            //var dientich=chieudai*chieurong;
+            var dientich=chieudai+chieurong;
+            /*
+                *: nhan
+                /: chia
+                +: cong
+                -: tru
+            */
+            //alert(dientich);
+            getE('kq_dientich').innerHTML=dientich;
+        }
+    </script>
+</body>
+</html>
