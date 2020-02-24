@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Hoc JS - Form</title>
+</head>
+<body>
+    <script>
+		function make_select(danhsach){			
+		
+			var selectbox='<select>';
+			
+			for(i=0;i<danhsach.length;i++){
+				selectbox+=('<option>'+danhsach[i]+'</option>');
+			}
+			
+			selectbox+='</select>';
+			
+			document.write(selectbox);
+		}
+		
+		function tinh_dientich(){
+			var chieudai=document.getElementById('chieudai').value;
+			var chieurong=document.getElementById('chieurong').value;
+			var kq=chieudai*chieurong;
+			
+			document.getElementById('kq2').value=kq;
+			document.getElementById('kq').innerHTML=kq
+		}
+		
+		function phep_cong(a,b){
+			return eval(a)+eval(b);
+		}
+		
+		function tinh_chuvi(){
+			//(a+b)*2
+			var x=document.getElementById('chieudai').value;
+			var y=document.getElementById('chieurong').value;
+			var kq=phep_cong(x,y)*2;
+			
+			document.getElementById('kq2').value=kq;
+		}
+		
+	
+		var tinhthanh=['Tinh A','Tinh B','Tinh C','Tinh D','Tinh E','Tinh F'];
+		
+		var traicay=[111,'Quyt','Buoi'];
+		
+		make_select(tinhthanh);
+		
+		make_select(traicay);
+		
+		
+		
+	</script>
+	
+	<h2>Tinh dien tich</h2>
+	<input type="number" name="chieudai" id="chieudai" placeholder="Nhap chieu dai">
+	<input type="number" name="chieurong" id="chieurong"placeholder="Nhap chieu rong">
+	<input type="button" value="Tinh dien tich" onclick="tinh_dientich()">
+	<input type="button" value="Tinh chu vi" onclick="tinh_chuvi()">
+	<hr>
+	<input type="text" name="kq2" id="kq2" placeholder="Ket qua" disabled>
+	
+	<div id="kq"></div>
+</body>
+</html>
