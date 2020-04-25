@@ -1,7 +1,7 @@
 <?php
 	//Khai báo biến
 	/*
-	Tên biến tốt nhất:
+		Tên biến tốt nhất:
 		Viết thường
 		Không dấu
 		Không khoảng trắng

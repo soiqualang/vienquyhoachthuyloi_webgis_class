@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Tìm kiếm</title>
+	</head>
+	<body>
+		<form action="xuly.php" method="GET">
+			Nhập tên: <input type="text" name="ten" id="ten">
+			<input type="submit" value="Tìm kiếm">
+			<input type="button" value="Tìm kiếm vs Ajax" onclick="timkiem()">
+			<input type="reset" value="Làm lại">
+			<hr>
+			<div id="kq">Kết quả tìm kiếm ở đây</div>
+		</form>
+		
+	<script>
+	function timkiem() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+		  document.getElementById("kq").innerHTML =
+		  this.responseText;
+		}
+	  };
+	  var ten=document.getElementById("ten").value;
+	  xhttp.open("GET", "xuly_ajax.php?ten="+ten, true);
+	  xhttp.send();
+	}
+	</script>
+	</body>
+</html>
