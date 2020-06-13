@@ -29,20 +29,24 @@
 		//check co ket qua hay khong
 		if(pg_num_rows($thucthi)>0){
 			//Lay du lieu ra
-			echo '<table border="1">';
+			echo '<table class="table table-hover">';
+			echo '<thead>';
 			echo '<tr>
-					<td><b>Tên</b></td>
-					<td><b>Địa chỉ</b></td>
+					<th><b>Tên</b></th>
+					<th><b>Địa chỉ</b></th>
 				</tr>';
+			echo '</thead>';
+			echo '<tbody>';
 			while($kq=pg_fetch_assoc($thucthi)){
 				/* echo 'Tên '.$kq['tenchusdd'].', địa chỉ là '.$kq['diachi'];
 				echo '<br>'; */
 				
-				echo '<tr>
+				echo '<tr onclick="zoom_highlight('.$kq['id'].');">
 						<td>'.$kq['tenchusdd'].'</td>
 						<td>'.$kq['diachi'].'</td>
 					</tr>';
 			}
+			echo '</tbody>';
 			echo '</table>';
 		}else{
 			echo 'Không tìm thấy kết quả phù hợp.';

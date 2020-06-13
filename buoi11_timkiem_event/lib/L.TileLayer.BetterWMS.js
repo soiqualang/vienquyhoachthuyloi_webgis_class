@@ -37,15 +37,17 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
     // Construct a GetFeatureInfo request URL given a point
     var point = this._map.latLngToContainerPoint(latlng, this._map.getZoom());
     var size = this._map.getSize();
-	var height=size.y;
-	height=Math.round(size.y);
+    var height=size.y;
+    var height2=Math.floor(size.y);
+    console.table(height,height2)
     var width=size.x;
-	width=Math.round(width);
+    var width2=Math.floor(width);
+    console.table(width,width2)
 	
 	/* alert(height);
 	alert(width); */
         
-	var params = {
+	params = {
 	  request: 'GetFeatureInfo',
 	  service: 'WMS',
 	  srs: 'EPSG:4326',
@@ -54,18 +56,18 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
 	  version: this.wmsParams.version,      
 	  format: this.wmsParams.format,
 	  bbox: this._map.getBounds().toBBoxString(),
-	  height: Math.round(height),
-	  width: Math.round(width),
+	  height: height,
+	  width: width,
 	  layers: this.wmsParams.layers,
 	  query_layers: this.wmsParams.layers,
 	  //info_format: 'text/html'
 	  info_format: 'application/json'
 	};
-	
-	console.log(params);
     
-    params[params.version === '1.3.0' ? 'i' : 'x'] = point.x;
-    params[params.version === '1.3.0' ? 'j' : 'y'] = point.y;
+    params[params.version === '1.3.0' ? 'i' : 'x'] = Math.floor(point.x);
+    params[params.version === '1.3.0' ? 'j' : 'y'] = Math.floor(point.y);
+
+    console.table(Math.floor(point.x),Math.floor(point.y))
     
     return this._url + L.Util.getParamString(params, this._url, true);
   },

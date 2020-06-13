@@ -34,3 +34,8 @@ footer {
 	padding-right: 0px;
     padding-left: 0px;
 }
+
+#kq{
+	height: 45vh;
+    overflow-y: scroll;
+}
